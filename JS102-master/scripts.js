@@ -20,27 +20,41 @@ noiseArray.push('meow');
 
 noiseArray.push('tweet');
 
-noiseArray['cow noise'] = 'moo';
+//noiseArray['cow noise'] = 'moo';
 
-// console.log(noiseArray);
-// console.log(noiseArray.length);
-// console.log(noiseArray.length - 1);
+console.log(noiseArray);
+console.log(noiseArray.length);
+console.log(noiseArray.length - 1);
 
-var noises = [noiseArray];
+var noises = noiseArray;
 
 //console.log(noises);
 
 animal['noises'] = noises;
 
+animal.sayName = function(){
+	console.log('my name is '+this.username);
+}
+
+animal.makeNoises = function(){
+	console.log('my name is'+this.username);
+	var name = this.username;
+	this.noises.forEach(function(noise){
+		console.log('my name is ' +name+' and i say '+noise);
+	})
+}
+
+animal.sayName();
+animal.makeNoises();
 var i = 0;
 
 for(var key in animal){
 	i++;
 	if(key === 'username'){
-		//console.log('my name is ' + animal['username']);
+		console.log('my name is ' + animal['username']);
 	}
 	else if(key === 'tagline'){
-		//console.log('i say ' + animal['tagline']);
+		console.log('i say ' + animal['tagline']);
 	}
 }
 
